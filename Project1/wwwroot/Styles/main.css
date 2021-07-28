@@ -1,0 +1,9 @@
+﻿body {
+    background-image: linear-gradient(to bottom, #fee2f0, #e5f1fc);
+    text-shadow: -1px 0px 4px #E6FFE6, 0px 1px 4px #E6FFE6, 1px 0px 4px #E6FFE6, 0px -1px 4px #E6FFE6;
+}
+
+header {
+    font-family: 'Amaranth', sans-serif;
+}
+

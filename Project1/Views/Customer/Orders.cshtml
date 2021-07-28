@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Project1.ViewModels.OrderViewModel>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@ViewData["CustomerName"]'s Order History</h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LocationName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    <a asp-action="Orders" asp-route-id="@ViewData["CustomerId"]"
+                       asp-route-sortOrder="@ViewData["TimeSortParm"]">@Html.DisplayNameFor(model => model.OrderTime)</a>
+                </th>
+                <th>
+                    <a asp-action="Orders" asp-route-id="@ViewData["CustomerId"]"
+                       asp-route-sortOrder="@ViewData["OrderTotalSortParm"]">Order Total</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LocationName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderTime)
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(modelItem => item.OrderTotal)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                        @Html.ActionLink("Order Details", "Order", new { id = item.OrderId })
+                        @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+
+

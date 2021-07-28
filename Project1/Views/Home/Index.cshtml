@@ -1,0 +1,72 @@
+﻿@model Project1.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="font-size: 3.5rem; font-family: Arial">Welcome</h1>
+    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+</div>
+<hr>
+
+<h4>This is a Cupcake Store Location Manager for tracking cupcake orders at various store locations.</h4>
+<hr>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderTotalAverage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationMostOrders)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationWithLatestOrder)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                $@Html.DisplayFor(modelItem => Model.OrderTotalAverage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.LocationMostOrders)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.LocationWithLatestOrder)
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Location Count
+            </th>
+            <th>
+                Customer Count
+            </th>
+            <th>
+                Order Count
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Locations.Count)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Customers.Count)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Orders.Count)
+            </td>
+        </tr>
+    </tbody>
+</table>
