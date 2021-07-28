@@ -46,7 +46,7 @@ namespace Project1
             services.AddScoped<IRecipeItemRepo, RecipeItemRepo>();
 
             services.AddDbContext<Project1Context>(builder =>
-                builder.UseSqlServer(Configuration["P1App:connectionString"]));
+                builder.UseSqlServer(Configuration["P1App"]));
 
             //Microsoft.AspNetCore.MvcOptions.EnableEndpointRouting = false;
 
